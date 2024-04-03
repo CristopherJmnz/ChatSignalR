@@ -1,0 +1,23 @@
+﻿@{
+    Usuario user = Context.Session.GetObject<Usuario>("user");
+}
+<h1>Chat en tiempo real con SignalR</h1>
+<div class="container">
+    <input type="hidden" id="userInput" value="@user.Username" />
+    <input type="text" class="w-50 form-control mb-3" id="messageInput" />
+    <button type="button" class="btn btn-danger mb-3" id="sendButton">ENVIAR</button>
+    <div class="row p-1">
+        <div class="col-6">
+            <hr />
+        </div>
+    </div>
+    <div class="row p-1">
+        <div class="col-6">
+            <ul id="messagesList" class="list-group"></ul>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <script src="~/js/signalr/dist/browser/signalr.js"></script>
+    <script src="~/js/chat.js"></script>
+}
